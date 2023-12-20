@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Knapsack Problem</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body { background-color: #FEFAE0; }
+        .container {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            margin-top: 50px;
+        }
+        h2 { color: #5F6F52; }
+        .form-control { border: solid 1px #A9B388; color: #333; }
+        .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #A9B388;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(169, 179, 136, 0.25);
+    }
+        .btn-primary { background-color: #B99470; border-color: #B99470; color: #FFF; }
+        .btn-primary:hover { background-color: #A08360; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-5">Fractional Knapsack Problem</h2>
+        <form method="POST" class="row justify-content-center">
+            <div class="form-group col-md-6">
+                <label for="num_vehicles">Number of Vehicles</label>
+                <input type="number" class="form-control" id="num_vehicles" name="num_vehicles" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="num_goods">Number of Goods</label>
+                <input type="number" class="form-control" id="num_goods" name="num_goods" required>
+            </div>
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary px-3 py-2">Next</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

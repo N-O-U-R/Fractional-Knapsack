@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Knapsack Problem - Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body { background-color: #FEFAE0; }
+        .container {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            margin-top: 50px;
+        }
+        h2 { color: #5F6F52; }
+        .form-control { border: solid 1px #A9B388; color: #333; }
+        .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #A9B388;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(169, 179, 136, 0.25);
+    }
+        .btn-primary { background-color: #B99470; border-color: #B99470; color: #FFF; }
+        .btn-primary:hover { background-color: #A08360; }
+    </style>
+</head>
+<body>
+    <div class="container mb-5">
+        <h2 class="mt-4 text-center">Result</h2>
+        <div class="row mt-5 ">
+            {% for vehicle in result %}
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Vehicle {{ loop.index }}</h5>
+                        <p class="card-text">Profit: {{ vehicle[0] }}</p>
+                        <ul>
+                            {% for fraction in vehicle[1] %}
+                            <li>Item {{ loop.index0 }} fraction: {{ fraction }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% if loop.index % 4 == 0 and not loop.last %}
+            </div><div class="row mt-3">
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

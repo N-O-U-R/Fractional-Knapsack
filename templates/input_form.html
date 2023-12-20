@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Knapsack Problem - Input</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body { background-color: #FEFAE0; }
+        .container {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            margin-top: 50px;
+        }
+        h2 { color: #5F6F52; }
+        .form-control { border: solid 1px #A9B388; color: #333; }
+        .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #A9B388;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(169, 179, 136, 0.25);
+    }
+        .btn-primary { background-color: #B99470; border-color: #B99470; color: #FFF; }
+        .btn-primary:hover { background-color: #A08360; }
+    </style>
+</head>
+<body>
+    <div class="container mb-5">
+        <h2 class="mt-4 text-center mb-5">Enter Details</h2>
+        <form method="POST" action="{{ url_for('calculate') }}">
+            <input type="hidden" name="num_vehicles" value="{{ num_vehicles }}">
+            <input type="hidden" name="num_goods" value="{{ num_goods }}">
+            {% for i in range(num_vehicles) %}
+            <div class="form-group">
+                <label for="capacity_{{i}}">Vehicle {{i+1}} Capacity</label>
+                <input type="number" class="form-control" id="capacity_{{i}}" name="capacity_{{i}}" required>
+            </div>
+            {% endfor %}
+            {% for i in range(num_goods) %}
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="value_{{i}}">Good {{i+1}} Value</label>
+                    <input type="number" class="form-control" id="value_{{i}}" name="value_{{i}}" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="weight_{{i}}">Good {{i+1}} Weight</label>
+                    <input type="number" class="form-control" id="weight_{{i}}" name="weight_{{i}}" required>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="text-center">
+                <button type="submit" class="btn btn-success mt-5 mb-3 px-3 py-2">Calculate</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
